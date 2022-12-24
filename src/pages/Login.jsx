@@ -1,7 +1,8 @@
 import { Button, TextField } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { UserContext } from '../components/contexts/user.context';
+import { UserContext } from '../components/contexts/user.contextProvider';
+import './Login.css';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Login = () => {
 	// credentials again every time the user refreshes or revisits our app,
 	// so we are checking if the user is already logged in and
 	// if so we are redirecting the user to the home page.
-	// Otherwise we will do nothing and let the user to login.
+	// Otherwise we will do nothing and let the user attempt another login.
 	const loadUser = async () => {
 		if (!user) {
 			const fetchedUser = await fetchUser();
@@ -73,13 +74,19 @@ const Login = () => {
 	};
 
 	return (
-		<form
+		<>
+		<h1 id="welcome">WELCOME TO SF/INFORMED!</h1>			
+		<br/>
+		<br/>
+		<br/>
+		<form className="login"
 			style={{
 				display: 'flex',
 				flexDirection: 'column',
 				maxWidth: '300px',
 				margin: 'auto'
 			}}>
+			<h3>You must first login to enter the site.</h3>
 			<h1>Login</h1>
 			<TextField
 				label="Email"
@@ -106,6 +113,7 @@ const Login = () => {
 				Don't have an account? <Link to="/signup">Signup</Link>
 			</p>
 		</form>
+		</>
 	);
 };
 

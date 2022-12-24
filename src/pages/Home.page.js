@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Outlet } from "react-router-dom";
 import NavBar from '../components/NavBar/NavBar';
 // import './NavBar.css';
 import { Button } from '@mui/material';
-import "./Home.css"
 import { useContext } from 'react';
-import { UserContext } from '../components/contexts/user.context';
+import { UserContext } from '../components/contexts/user.contextProvider';
+import "./Home.css"
  
 export default function Home() {
  const { logOutUser } = useContext(UserContext);
@@ -16,6 +15,7 @@ export default function Home() {
    try {
      // Calling the logOutUser function from the user context.
      const loggedOut = await logOutUser();
+
      // Now we will refresh the page, and the user will be logged out and
      // redirected to the login page because of the <PrivateRoute /> component.
      if (loggedOut) {
@@ -34,12 +34,6 @@ export default function Home() {
       <div id="detail">
         <Outlet />
       </div>
-       <div class="wrapper">
-      <h1></h1>
-      <h2>
-        
-      </h2>
-    </div>
         </>
 	);
 }

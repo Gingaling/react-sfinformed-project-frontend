@@ -1,9 +1,17 @@
+* {
+    margin: 0;
+    /* text-align: center; */
+}
+
 body {
-    margin: 20px;
+    /* background-image: none; */
+    /* background-color: white; */
 }
 
 table {
-    width: 110%;
+    text-align: center;
+    width: 80%;
+    background-color: tan;
 }
 
 table, th, td {

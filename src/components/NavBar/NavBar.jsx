@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
@@ -77,19 +76,19 @@ function NavBar() {
 						</nav>
 					</div>
 				</div>
-				<container id="searchtool">
+				<div id="searchtool">
 					{/* Begin siteLevel HTML Searchbox Code */}
-					<Link to="about.js" className="split" id="aboutsf" onClick="route()">
-						About SF/informed
-					</Link>
 					<form className="split" method="get" action="https://www.sitelevel.com/query" accept-charset="utf-8">
 						<div className="sl_search_box">
 							<input type="text" name="query" placeholder="enter search terms" />
 							<input type="submit" name="crid" value="search" />
 						</div>
 					</form>
+					<Link to="about.js" className="split" id="aboutsf" onClick="route()">
+						About SF/informed
+					</Link>
 					{/* End siteLevel HTML Searchbox Code */}
-				</container>
+				</div>
 			</div>
 		</div>;
 }

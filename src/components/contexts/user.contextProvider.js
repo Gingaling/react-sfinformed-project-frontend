@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { App, Credentials } from 'realm-web';
 import { APP_ID } from './constants';
+import './user.contextProvider.css';
 
 // Creating a Realm App Instance
 const app = new App(APP_ID);
@@ -12,7 +13,7 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 
-	// Function to log in user into our App Service app using their email & password
+	// Function to log in user into the Atlas MongoDB App Service app using their email & password
 	const emailPasswordLogin = async (email, password) => {
 		const credentials = Credentials.emailPassword(email, password);
 		const authenticatedUser = await app.logIn(credentials);
@@ -60,7 +61,7 @@ export const UserProvider = ({ children }) => {
 	};
 
 	return (
-		<UserContext.Provider
+		<UserContext.Provider id='logout'
 			value={{
 				user,
 				setUser,

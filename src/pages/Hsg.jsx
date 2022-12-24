@@ -1,8 +1,10 @@
 import React from 'react';
+import "./Hsg.css"
 
 export default function Hsg() {
 
     return (
+      <div className='wrapper'>
     <div className="wrapper">
             <h1>NEIGHBORHOODS, REAL ESTATE & DEVELOPMENT</h1>
 <table>
@@ -34,6 +36,7 @@ export default function Hsg() {
            <p><a href = "mailto:rich.hillis@sfplanning.org">Send Email to Rich Hillis, SF Planning Director</a></p>
 
             <h2>FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  FILLER  filler  </h2>
-            </div>  
+            </div> 
+            </div>
     );
 }
