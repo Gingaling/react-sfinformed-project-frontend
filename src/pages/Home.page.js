@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar/NavBar';
 // import './NavBar.css';
 import { Button } from '@mui/material';
 import { useContext } from 'react';
-import { UserContext } from '../components/contexts/user.contextProvider';
+import { UserContext } from '../contexts/user.context';
 import "./Home.css"
  
 export default function Home() {

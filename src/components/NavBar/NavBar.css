@@ -12,13 +12,8 @@ body {
 
 }
 
-/* img.App-header#logo {
-  margin-left: 125px;
-  padding-left: 25px;
-} */
-
 header {
-    display: no-repeat;
+    /* display: no-repeat; */
     justify-content: right;
 }
 
@@ -44,6 +39,7 @@ div.dropdown button.dropbtn {
   margin-top: 0;
     color: orange;
     font-style: italic;
+    font-weight: bold;
 }
 
 #arrowdown i.fa fa-caret-down{
@@ -67,11 +63,16 @@ div.dropdown button.dropbtn {
     display: none;
 }
 
+img.dropbtn-icon {
+    width: 20px;
+    height: 20px;
+}
+
 input {
-    padding: 12px 7px;
+    padding: 19px 7px;
     border-radius: 4px;
     border: 1px solid gray;
-    margin: .4em 0em .3em .3em;
+    margin: .3em 0em 0em .3em;
 }
 
 form button {
@@ -129,7 +130,8 @@ li::before {
 
 /* Navbar container */
 .navbar, .topnav {
-  margin-left: 0;
+  margin: 5px 0 0 10p;
+  padding: 5px 0 0 5px;
   overflow: hidden;
   background-color: #333;
   font-family: 'Times New Roman', Times, serif;
@@ -140,8 +142,9 @@ li::before {
 .navbar a {
   margin-top: 0;
   margin-left: 0;
+  margin-bottom: 13px;
   float: left;
-  font-size: 16px;
+  font-size: 1.5rem;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -151,16 +154,16 @@ li::before {
 /* The dropdown container */
 .dropdown {
   float: left;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 1.5rem;
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding: 17px 16px 0 25px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */

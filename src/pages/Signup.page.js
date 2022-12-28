@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { UserContext } from '../components/contexts/user.contextProvider';
+import { UserContext } from '../contexts/user.context';
 
 const Signup = () => {
 	const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Signup = () => {
 	});
 
 	// As explained in the Login page.
-	const onFormInputChange = event => {
+	const onFormInputChange = (event) => {
 		const { name, value } = event.target;
 		setForm({ ...form, [name]: value });
 	};

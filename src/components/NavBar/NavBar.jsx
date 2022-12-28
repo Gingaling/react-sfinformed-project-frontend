@@ -18,8 +18,8 @@ function NavBar() {
 				</nav>
 				<div className="dropdown">
 					<button className="dropbtn">
-						Inform Me About. . .
-						<img className="dropbtn-icon" src="https://i.imgur.com/2122L5i.png" alt="caret-down" />
+						Inform Me About...
+						<img className="dropbtn-icon" src="https://i.imgur.com/m2YEN0kl.png" alt="caret-down icon" />
 					</button>
 
 					<div className="dropdown-content">
@@ -35,15 +35,15 @@ function NavBar() {
 								City Management & Ethics
 							</Link>
 
-							<Link to="culturerec" onClick="route()">
+							{/* <Link to="culturerec" onClick="route()">
 								Culture & Recreation
-							</Link>
+							</Link> */}
 
 							<Link to="econ" onClick="route()">
 								Economy & Community
 							</Link>
 							<Link to="edu" onClick="route()">
-								Education & Laerning
+								Education & Learning
 							</Link>
 							<Link to="nrg" onClick="route()">
 								Energy & Environment
@@ -65,14 +65,13 @@ function NavBar() {
 								Politics & Elections
 							</Link>
 
-							<Link to="publicsafety" onClick="route()">
+							{/* <Link to="publicsafety" onClick="route()">
 								Public Safety
-							</Link>
+							</Link> */}
 
 							<Link to="transport" onClick="route()">
 								Transportation
 							</Link>
-						
 						</nav>
 					</div>
 				</div>

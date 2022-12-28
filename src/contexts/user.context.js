@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 import { App, Credentials } from 'realm-web';
-import { APP_ID } from './constants';
-import './user.contextProvider.css';
+import { APP_ID } from '../realm/constants';
+import './user.context.css';
 
 // Creating a Realm App Instance
 const app = new App(APP_ID);
@@ -13,7 +13,7 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 
-	// Function to log in user into the Atlas MongoDB App Service app using their email & password
+	// Function to log in user into the Atlas MongoDB App Service app using their userName & password
 	const emailPasswordLogin = async (email, password) => {
 		const credentials = Credentials.emailPassword(email, password);
 		const authenticatedUser = await app.logIn(credentials);
@@ -25,8 +25,8 @@ export const UserProvider = ({ children }) => {
 	const emailPasswordSignup = async (email, password) => {
 		try {
 			await app.emailPasswordAuth.registerUser(email, password);
-			// Since we are automatically confirming our users, we are going to log in
-			// the user using the same credentials once the signup is complete.
+			//Since we are automatically confirming our users, we are going to log in the user
+			// using the same credentials once the signup is complete
 			return emailPasswordLogin(email, password);
 		} catch (error) {
 			throw error;
@@ -39,13 +39,13 @@ export const UserProvider = ({ children }) => {
 		try {
 			await app.currentUser.refreshCustomData();
 			// Now, if we have a user, we are setting it to our user context
-			// so that we can use it in our app across different components.
+			// so that we can use it in our app across different components
 			setUser(app.currentUser);
 			return app.currentUser;
 		} catch (error) {
 			throw error;
 		}
-	};
+	}
 
 	// Function to logout user from our App Services app
 	const logOutUser = async () => {
@@ -58,10 +58,10 @@ export const UserProvider = ({ children }) => {
 		} catch (error) {
 			throw error;
 		}
-	};
+	}
 
 	return (
-		<UserContext.Provider id='logout'
+		<UserContext.Provider 
 			value={{
 				user,
 				setUser,

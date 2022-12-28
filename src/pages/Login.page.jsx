@@ -1,8 +1,8 @@
 import { Button, TextField } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { UserContext } from '../components/contexts/user.contextProvider';
-import './Login.css';
+import { UserContext } from '../contexts/user.context';
+import './Login.page.css';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -15,12 +15,12 @@ const Login = () => {
 	// We are using React's "useState" hook to keep track
 	//  of the form values.
 	const [form, setForm] = useState({
-		email: '',
-		password: ''
+		email: "",
+		password: ""
 	});
 
 	// This function will be called whenever the user edits the form.
-	const onFormInputChange = event => {
+	const onFormInputChange = (event) => {
 		const { name, value } = event.target;
 		setForm({ ...form, [name]: value });
 	};
@@ -28,15 +28,15 @@ const Login = () => {
 	// This function will redirect the user to the
 	// appropriate page once the authentication is done.
 	const redirectNow = () => {
-		const redirectTo = location.search.replace('?redirectTo=', '');
-		navigate(redirectTo ? redirectTo : '/');
+		const redirectTo = location.search.replace("?redirectTo=", "");
+		navigate(redirectTo ? redirectTo : "/");
 	};
 
 	// Once a user logs in to our app, we don’t want to ask them for their
 	// credentials again every time the user refreshes or revisits our app,
 	// so we are checking if the user is already logged in and
 	// if so we are redirecting the user to the home page.
-	// Otherwise we will do nothing and let the user attempt another login.
+	// Otherwise we will do nothing and let the user attempt another login
 	const loadUser = async () => {
 		if (!user) {
 			const fetchedUser = await fetchUser();
@@ -45,13 +45,13 @@ const Login = () => {
 				redirectNow();
 			}
 		}
-	};
+	}
 
 	// This useEffect will run only once when the component is mounted.
 	// Hence this is helping us in verifying whether the user is already logged in
 	// or not.
 	useEffect(() => {
-		loadUser(); // eslint-disable-next-line react-hooks/exhaustive-deps
+		loadUser();
 	}, []);
 
 	// This function gets fired when the user clicks on the "Login" button.
@@ -75,11 +75,12 @@ const Login = () => {
 
 	return (
 		<>
+		<div className="login">
 		<h1 id="welcome">WELCOME TO SF/INFORMED!</h1>			
 		<br/>
 		<br/>
 		<br/>
-		<form className="login"
+		<form className="loginForm"
 			style={{
 				display: 'flex',
 				flexDirection: 'column',
@@ -87,6 +88,7 @@ const Login = () => {
 				margin: 'auto'
 			}}>
 			<h3>You must first login to enter the site.</h3>
+			<br/>
 			<h1>Login</h1>
 			<TextField
 				label="Email"
@@ -95,7 +97,7 @@ const Login = () => {
 				name="email"
 				value={form.email}
 				onChange={onFormInputChange}
-				style={{ marginBottom: '1rem' }}
+				style={{ marginBottom: "1rem" }}
 			/>
 			<TextField
 				label="Password"
@@ -113,8 +115,9 @@ const Login = () => {
 				Don't have an account? <Link to="/signup">Signup</Link>
 			</p>
 		</form>
+		</div>
 		</>
 	);
-};
+}
 
 export default Login;

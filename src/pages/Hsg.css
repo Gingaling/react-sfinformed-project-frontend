@@ -4,8 +4,11 @@
 }
 
 body {
-    /* background-image: none; */
-    /* background-color: white; */
+    background-color: white;
+}
+
+.wrapper {
+    background-image: none;
 }
 
 table {

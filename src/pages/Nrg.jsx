@@ -1,37 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DataQ from './Nrg-dataQ';
+// import { Dropdown, Option } from './Dropdown';
+import './styles.js';
+import './Nrg.css';
 
 export default function Nrg() {
+	// const [optionValue, setOptionValue] = useState('');
+	// // const [userInput, setUserInput] = useState(0);
 
-    return (
- <div className="wrapper">
-    <h1>ENERGY & ENVIRONMENT</h1>
-            <h1>WHAT HAS BEEN HAPPENING IN SF?</h1>
-            <container>
-            <form className="form">
-                <label for="number-of-complaints">Number of Incidents to View: </label>
-                <input
-                    id="number-of-complaints"
-                    name="number-of-complaints"
-                    type="number"
-                    className="number-of-complaints"
-                    placeholder="# OF INCIDENTS"
-                />
-                </form>
-                </container>
-                <br/>
-                <h3>Incident Category</h3>
-                <br/>
-                <form>
-                <button>Lost Property</button>
-                <button>Burglary</button>
-                <button>Missing Person</button>
-                <button>Larceny Theft</button>
-                <button>Drug Offense</button>
-            </form>
-            <div>
-            <ul className="complaints-list"></ul>
-        </div>
-        <script src="sf-data/scripts/nrg.script.js"></script>
-    </div>
-    );
+	// const handleSelect = (event) => {
+	// 	console.log(event.target.value);
+	// 	setOptionValue(event.target.value);
+	// };
+
+	// useEffect (() => {
+	// const handleSubmit = e => {
+	// 	setUserInput(e.target.value);
+	// };
+	return (
+	<div>
+		<h1>ENERGY & ENVIRONMENT</h1>
+		<br />
+		<h2>What services are you interested in learning about?</h2>
+		<DataQ />
+	</div>
+	)
 }
